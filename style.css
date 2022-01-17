@@ -1,0 +1,156 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #FFF;
+
+    background-image: url(img/table.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+
+    margin: 0;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+a {
+    color: #FFF;
+}
+
+#card-grid {
+    width: 630px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: 76.5px;
+    height: 76.5px;
+}
+
+.card {
+    background-image: url(img/card_back.jpg);
+    opacity: 0.6;
+    background-size: contain;
+    width: 45px;
+    height: 63px;
+}
+
+.discovered,
+.unlocked {
+    opacity: 1;
+}
+
+.card1 {
+    transform: rotate(90deg);
+}
+
+.card1:hover {
+    transform: rotate(90deg) scale(1.2);
+}
+
+.card2 {
+    transform: rotate(0deg);
+}
+
+.card2:hover {
+    transform: rotate(0deg) scale(1.2);
+}
+
+.card3 {
+    transform: rotate(-45deg);
+}
+
+.card3:hover {
+    transform: rotate(-45deg) scale(1.2);
+}
+
+.card4 {
+    transform: rotate(45deg);
+}
+
+.card4:hover {
+    transform: rotate(45deg) scale(1.2);
+}
+
+.overlay {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.85);
+    border-radius: 1em;
+    top: 60%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    text-align: center;
+    padding: 1em;
+    font-size: 2rem;
+}
+
+.overlay .buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 5rem;
+    text-shadow: 5px 10px 30px rgba(255,255,255,0.05);
+    padding: .15em;
+}
+
+#ok-btn,
+#final-ok-btn {
+    color: #FFF;
+}
+
+#layer5-modal {
+    max-width: 600px;
+    top: 60%;
+}
+
+#layer5-modal * {
+    font-size: 3rem;
+    margin: .35em 0;
+}
+
+.buttons label {
+    padding: .25em;
+}
+
+input {
+    display: none;
+}
+
+#layer5-modal .buttons input:checked + label {
+    border: 5px solid white;
+}

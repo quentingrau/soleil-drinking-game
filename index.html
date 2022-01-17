@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="img/favincon.ico" />
+        <title>Le Soleil</title>
+    </head>
+    <body>
+        <div id="layer1-modal" class="overlay">
+            <h2>Rouge ou Noir ?</h2>
+            <div class="buttons">
+                <button id="red-btn">🔴</button>
+                <button id="black-btn">⚫</button>
+            </div>
+        </div>
+        <div id="layer2-modal" class="overlay">
+            <h2>Plus ou Moins ?</h2>
+            <div class="buttons">
+                <button id="greater-btn">👆</button>
+                <button id="less-btn">👇</button>
+            </div>
+        </div>
+        <div id="layer3-modal" class="overlay">
+            <h2>Inter ou Exter ?</h2>
+            <div class="buttons">
+                <button id="inter-btn">👉👈</button>
+                <button id="exter-btn">👈👉</button>
+            </div>
+        </div>
+        <div id="layer4-modal" class="overlay">
+            <h2>Pique, Trèfle, Coeur ou Carreau ?</h2>
+            <div class="buttons">
+                <button id="spades-btn">♠️</button>
+                <button id="clubs-btn">♣️</button>
+                <button id="hearts-btn">♥️</button>
+                <button id="diamonds-btn">♦️</button>
+            </div>
+        </div>
+        <div id="layer5-modal" class="overlay">
+            <form id="final-form" action="#">
+                <h2>Plus ou moins que 8 ?</h2>
+                <div class="buttons">
+                    <input type="radio" name="greater-less" id="greater" value="greater">
+                    <label for="greater" id="greater-text">👆</label>
+                    <input type="radio" name="greater-less" id="less" value="less">
+                    <label for="less" id="less-text">👇</label>
+                </div>
+                <h2>Pique, Trèfle, Coeur ou Carreau ?</h2>
+                <div class="buttons">
+                    <input type="radio" name="colors" id="spades" value="spades">
+                    <label for="spades" id="spades-text">♠️</label>
+                    <input type="radio" name="colors" id="clubs" value="clubs">
+                    <label for="clubs" id="clubs-text">♣️</label>
+                    <input type="radio" name="colors" id="hearts" value="hearts">
+                    <label for="hearts" id="hearts-text">♥️</label>
+                    <input type="radio" name="colors" id="diamonds" value="diamonds">
+                    <label for="diamonds" id="diamonds-text">♦️</label>
+                </div>
+                <button type="submit" id="final-ok-btn">OK</button>
+            </form>
+        </div>
+        <div id="gorgees-modal" class="overlay">
+            <h2>Tu bois <span id="gorgees-a-boire"></span> gorgées!</h2>
+            <button id="ok-btn">🥤</button>
+        </div>
+        <div class="container">
+            <header>
+                <h1>🌞 Le Soleil</h1>
+                <h2><span id="gorgees">0</span> gorgées en jeu</h2>
+            </header>
+            <main>
+                <div id="card-grid"></div>
+            </main>
+            <footer>
+                <p>💡 D'après une idée de <a href="https://www.instagram.com/timotheegaudin/" target="_blank">@timgaudin</a> et <a href="https://www.instagram.com/jeremie_crn/" target="_blank">@jeremie_crn</a></p>
+                <p>Conçu avec ❤️ par <a href="https://github.com/quentingrau/quentingrau" target="_blank">@quentingrau</a></p>
+            </footer>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
