@@ -17,6 +17,7 @@ const secondLayer = [3,5,7,14,18,25,27,29];
 const thirdLayer = [4,6,8,12,20,24,26,28];
 const fourthLayer = [9,10,11,15,17,21,22,23];
 const cardGridEl = document.getElementById("card-grid");
+const backgroundOverlay = document.getElementById("background-overlay");
 const layer1Modal = document.getElementById("layer1-modal");
 const layer2Modal = document.getElementById("layer2-modal");
 const layer3Modal = document.getElementById("layer3-modal");
@@ -129,21 +130,21 @@ function getLayer1Card(card) {
 function getLayer2Cards(card) {
     switch(thirdLayer.indexOf(cardsArr.indexOf(card))) {
         case 0:
-            return [cards[0], cards[1]];
+            return [cards[secondLayer[0]], cards[secondLayer[1]]];
         case 1:
-            return [cards[1], cards[2]];
+            return [cards[secondLayer[1]], cards[secondLayer[2]]];
         case 2:
-            return [cards[0], cards[3]];
+            return [cards[secondLayer[0]], cards[secondLayer[3]]];
         case 3:
-            return [cards[2], cards[4]];
+            return [cards[secondLayer[2]], cards[secondLayer[4]]];
         case 4:
-            return [cards[3], cards[5]];
+            return [cards[secondLayer[3]], cards[secondLayer[5]]];
         case 5:
-            return [cards[4], cards[7]];
+            return [cards[secondLayer[4]], cards[secondLayer[7]]];
         case 6:
-            return [cards[5], cards[6]];
+            return [cards[secondLayer[5]], cards[secondLayer[6]]];
         case 7:
-            return [cards[6], cards[7]];
+            return [cards[secondLayer[6]], cards[secondLayer[7]]];
     }
 }
 
@@ -180,11 +181,13 @@ function buttonClick(condition, layerModal) {
         clickedCard.src = newCard.image;
         clickedCard.value = newCard.value;
         layerModal.style.display = "none";
+        backgroundOverlay.style.display = "none";
         if(condition(newCard)) {
             gorgeesDisplay.textContent = gorgees;
         } else {
             gorgeesABoireDisplay.textContent = gorgees;
-            gorgeesModal.style.display = 'block'
+            gorgeesModal.style.display = "block"
+            backgroundOverlay.style.display = "block"
             gorgees = 0;
             gorgeesDisplay.textContent = gorgees;
         }
@@ -200,6 +203,7 @@ function finalClick(event) {
         clickedCard.src = newCard.image;
         clickedCard.value = newCard.value;
         layer5Modal.style.display = "none";
+        backgroundOverlay.style.display = "none";
         if(finalCheckComplete(newCard, greaterLess, color)) {
             gorgees += 10;
             gorgeesDisplay.textContent = gorgees;
@@ -211,7 +215,8 @@ function finalClick(event) {
                 gorgees += 10;
             }
             gorgeesABoireDisplay.textContent = gorgees;
-            gorgeesModal.style.display = 'block'
+            gorgeesModal.style.display = "block";
+            backgroundOverlay.style.display = "block";
             gorgees = 0;
             gorgeesDisplay.textContent = gorgees;
         }
@@ -266,7 +271,8 @@ async function getCard() {
 }
 
 document.getElementById("ok-btn").addEventListener("click", function () {
-    gorgeesModal.style.display = 'none';
+    gorgeesModal.style.display = "none";
+    backgroundOverlay.style.display = "none";
 });
 
 document.getElementById("red-btn").addEventListener("click", redClick);
@@ -337,19 +343,24 @@ getDeck()
         card.addEventListener('click', () => {
             if(!card.classList.contains('discovered') && card.classList.contains('unlocked')){
                 if(firstLayer.includes(i)){
-                    layer1Modal.style.display = 'block';
+                    backgroundOverlay.style.display = "block";
+                    layer1Modal.style.display = "block";
                     clickedCard = card;
                 } else if (secondLayer.includes(i)) {
-                    layer2Modal.style.display = 'block';
+                    backgroundOverlay.style.display = "block";
+                    layer2Modal.style.display = "block";
                     clickedCard = card;
                 } else if (thirdLayer.includes(i)) {
-                    layer3Modal.style.display = 'block';
+                    backgroundOverlay.style.display = "block";
+                    layer3Modal.style.display = "block";
                     clickedCard = card;
                 } else if (fourthLayer.includes(i)) {
-                    layer4Modal.style.display = 'block';
+                    backgroundOverlay.style.display = "block";
+                    layer4Modal.style.display = "block";
                     clickedCard = card;
                 } else {
-                    layer5Modal.style.display = 'block';
+                    backgroundOverlay.style.display = "block";
+                    layer5Modal.style.display = "block";
                     clickedCard = card;
                 }
             }
