@@ -27,20 +27,32 @@ header {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding: 1em 0 2em;
+}
+
+.title-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-logo img {
+    height: 15em;
+    margin-right: 2em;
+}
+
+header h1 {
+    font-size: 6rem;
 }
 
 header h2 {
-    margin-bottom: 2em;
+    margin: 0;
     font-size: 4rem;
 }
 
 footer {
     text-align: center;
     font-size: 3rem;
-}
-
-header h1 {
-    font-size: 6rem;
 }
 
 a {
@@ -50,7 +62,7 @@ a {
 #card-grid {
     margin: 10% auto;
     width: 100%;
-    max-width: 750px;
+    max-width: 50vh;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -184,6 +196,11 @@ input {
         flex-direction: row;
         padding: 1em;
     }
+    .title-logo img {
+        height: 10em;
+        margin-right: 0m;
+    }
+
     header h1 {
         font-size: 2rem;
         margin-left: 1em;
@@ -197,6 +214,6 @@ input {
         font-size: 1.5rem;
     }
     #card-grid {  
-        max-width: 400px;
+        max-width: 80vh;
     }
 }
