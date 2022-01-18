@@ -195,6 +195,9 @@ function buttonClick(condition, layerModal) {
 }
 
 function finalClick(event) {
+    if(clickedCard.value) {
+        clickedCard.classList.add('discovered');
+    }
     event.preventDefault();
     const formData = new FormData(finalForm);
     const greaterLess = formData.get('greater-less');
