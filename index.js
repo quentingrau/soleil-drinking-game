@@ -27,6 +27,9 @@ const gorgeesModal = document.getElementById("gorgees-modal");
 const gorgeesDisplay = document.getElementById("gorgees");
 const gorgeesABoireDisplay = document.getElementById("gorgees-a-boire");
 const okBtn = document.getElementById("ok-btn");
+const layer2Focus = document.getElementById("layer2-focus");
+const layer3Focus1 = document.getElementById("layer3-focus1");
+const layer3Focus2 = document.getElementById("layer3-focus2");
 let cards;
 let cardsArr;
 let clickedCard;
@@ -353,10 +356,15 @@ getDeck()
                     backgroundOverlay.style.display = "block";
                     layer2Modal.style.display = "block";
                     clickedCard = card;
+                    layer2Focus.src = getLayer1Card(clickedCard).src;
                 } else if (thirdLayer.includes(i)) {
                     backgroundOverlay.style.display = "block";
                     layer3Modal.style.display = "block";
                     clickedCard = card;
+                    let layer2Cards = getLayer2Cards(clickedCard);
+                    layer2Cards.sort((a,b) => cardsValue.indexOf(a.value) - cardsValue.indexOf(b.value))
+                    layer3Focus1.src = layer2Cards[0].src;
+                    layer3Focus2.src = layer2Cards[1].src;
                 } else if (fourthLayer.includes(i)) {
                     backgroundOverlay.style.display = "block";
                     layer4Modal.style.display = "block";

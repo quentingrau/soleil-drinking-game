@@ -83,6 +83,7 @@ a {
     background-size: contain;
     width: 58.8%;
     height: 82.4%;
+    border-radius: 2.5px;
 }
 
 .discovered,
@@ -142,11 +143,24 @@ a {
     top: 60%;
     left: 50%;
     width: 80%;
+    max-width: 600px;
     transform: translate(-50%,-50%);
     z-index: 2;
     text-align: center;
     padding: 1em;
     font-size: 2rem;
+}
+
+.card-focus {
+    width: 80%;
+    height: 35%;
+    margin: 0 auto;
+}
+
+.card-focus img {
+    width: 40%;
+    border-radius: 2.5px;
+    display: inline;
 }
 
 .overlay .buttons {
