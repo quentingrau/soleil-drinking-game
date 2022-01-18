@@ -136,8 +136,7 @@ button {
     border: none;
     cursor: pointer;
     font-size: 5rem;
-    text-shadow: 5px 10px 30px rgba(255,255,255,0.05);
-    padding: .15em;
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;    padding: .15em;
 }
 
 #ok-btn,
