@@ -28,6 +28,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1em 0 2em;
+    max-height: 30vh;
 }
 
 .title-logo {
@@ -48,6 +49,18 @@ header h1 {
 header h2 {
     margin: 0;
     font-size: 4rem;
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    header h1 {
+        font-size: 3rem;
+    }
+    .title-logo img {
+        height: 7em;
+    }
+    header h2 {
+        font-size: 2rem;
+    }
 }
 
 footer {
@@ -126,12 +139,12 @@ a {
 #background-overlay {
     display: none;
     position: absolute;
-    top: 30px;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     z-index: 2;
 }
 
@@ -168,7 +181,8 @@ a {
     justify-content: space-evenly;
 }
 
-button {
+button,
+.buttons label {
     background: none;
     border: none;
     cursor: pointer;
@@ -229,5 +243,8 @@ input {
     }
     #card-grid {  
         max-width: 80vh;
+    }
+    #background-overlay {
+        top: 30vh;
     }
 }
