@@ -8,6 +8,7 @@ body {
     object-fit: cover;
 
     margin: 0;
+    width: 100%;
     min-height: 100vh;
     height: 100%;
 }
@@ -20,18 +21,26 @@ body {
 }
 
 header {
-    width: 90%;
+    background-color: tomato;
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
+header h2 {
+    margin-bottom: 2em;
+    font-size: 4rem;
+}
+
 footer {
     text-align: center;
+    font-size: 3rem;
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 6rem;
 }
 
 a {
@@ -39,7 +48,9 @@ a {
 }
 
 #card-grid {
-    width: 630px;
+    margin: 10% auto;
+    width: 100%;
+    max-width: 750px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -49,17 +60,17 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
-    width: 76.5px;
-    height: 76.5px;
+    margin: 2% 0.3%;
+    width: 13%;
+    height: 13%;
 }
 
 .card {
     background-image: url(img/card_back.jpg);
     opacity: 0.6;
     background-size: contain;
-    width: 45px;
-    height: 63px;
+    width: 58.8%;
+    height: 82.4%;
 }
 
 .discovered,
@@ -165,4 +176,27 @@ input {
 
 #layer5-modal .buttons input:checked + label {
     border: 5px solid white;
+}
+
+@media only screen and (orientation: landscape) {
+    header {
+        width: 97%;
+        flex-direction: row;
+        padding: 1em;
+    }
+    header h1 {
+        font-size: 2rem;
+        margin-left: 1em;
+    }
+    header h2 {
+        margin: 0 1em 0 0;
+        font-size: 1.5rem;
+    }
+    footer {
+        width: 90%;
+        font-size: 1.5rem;
+    }
+    #card-grid {  
+        max-width: 400px;
+    }
 }
