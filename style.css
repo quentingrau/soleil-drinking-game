@@ -52,6 +52,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    min-height: 100vh;
 }
 
 header {
@@ -62,6 +63,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1em 0 2em;
+    box-shadow: var(--bs);
 }
 
 header * {
@@ -85,12 +87,15 @@ header h1 {
 
 header h2 {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
 }
 
 footer {
     text-align: center;
     font-size: 1rem;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    box-shadow: var(--bs);
+    width: 100%;
 }
 
 a {
@@ -238,10 +243,137 @@ input {
     display: none;
 }
 
+.wrapper{
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+    /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+    /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
+    /* clip-path: circle(25px at calc(0% + 45px) 45px); */
+    background-color: #e6b252;
+    background-image: linear-gradient(135deg, var(--clr-accent-secondary) 0%, var(--clr-accent-primary) 100%);
+    background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+    clip-path: circle(25px at calc(100% - 45px) 150px);
+    transition: all 0.3s ease-in-out;
+}
+#active:checked ~ .wrapper{
+    position: fixed;
+    clip-path: circle(75%);
+}
+.menu-btn{
+    position: absolute;
+    z-index: 100;
+    right: 20px;
+    /* left: 20px; */
+    top: 125px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    box-shadow: 0.25em 0.25em 1em rgba(0,0,0,.2),
+    0.1em 0.1em 0.5em rgba(0,0,0,.15);
+    cursor: pointer;
+    /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+    /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+    /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%); */
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s ease-in-out;
+}
+#active:checked ~ .menu-btn{
+    color: #fff;
+    position: fixed;
+}
+#active:checked ~ .menu-btn i:before{
+    content: "\f00d";
+}
+.wrapper ul{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    list-style: none;
+    width: max-content;
+}
+.wrapper ul li{
+    margin: 2.5em auto;
+    border-radius: 1.5em;
+    width: max-content;
+}
+.wrapper ul li a{
+    text-decoration: none;
+    font-size: 2rem;
+    padding: .5em 1em;
+    color: #fff;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    position: relative;
+    line-height: 1.5em;
+    transition: all 0.3s ease;
+}
+
+.rules,
+.about-us {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    font-size: 1.25rem;
+    box-shadow: var(--bs);
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    border-radius: .5em;
+    background-color: rgba(0,0,0,0.04);
+}
+
+.about-us {
+    text-align: center;
+    padding: 1em;
+}
+
+.rules {
+    padding: 0;
+    max-height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rules div {
+    text-align: center;
+    display: none;
+    width: 60%;
+}
+
+.rules .visible {
+    display: block;
+}
+
+.rules button {
+    border-radius: 50%;
+    margin: .5em;
+    width: 2em;
+    height: 2em;
+    background-color: rgba(0,0,0,0.04);
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    color: #fff;
+    font-weight: var(--fw-bold);
+    box-shadow: var(--bs);
+    font-size: 1.25rem;
+    text-align: center;
+}
+
 @media (max-width: 330px) {
     #background-overlay {
         display: block;
         background-color: black;
+        z-index: 1000;
     }
     #small-device-warning {
         position: absolute;
@@ -255,7 +387,7 @@ input {
     }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 720px) {
     header {
         width: 100%;
         flex-direction: row;
@@ -267,16 +399,10 @@ input {
     }
 
     header h1 {
-        font-size: 3rem;
         margin-left: 1em;
     }
     header h2 {
-        margin: 0 1em 0 0;
-        font-size: 1.75rem;
-    }
-    footer {
-        width: 90%;
-        font-size: 1.5rem;
+        margin: 0 2.5em 0 .5em;
     }
     .small label,
     .small button
@@ -295,5 +421,14 @@ input {
     }
     #card-grid{
         max-width: 55vh;
+    }
+    .wrapper {
+        clip-path: circle(25px at calc(100% - 45px) 80px);
+    }
+    .menu-btn {
+        top: 55px;
+    }
+    .wrapper ul li a{
+        font-size: 3.5rem;
     }
 }

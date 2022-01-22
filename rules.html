@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#fed334">
+        <meta name="msapplication-TileColor" content="#ffc40d">
+        <meta name="theme-color" content="#fed334">
+        <script src="https://kit.fontawesome.com/0a78ce96cd.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Le Soleil</title>
+    </head>
+    <body>
+        <div id="background-overlay">
+            <div id="small-device-warning">
+                <h1>Sorry, your screen is too small...</h1>
+            </div>
+        </div>
+        <div class="container">
+            <header>
+                <div class="title-logo">
+                    <img src="android-chrome-512x512.png" alt="logo du soleil" />
+                    <h1>Le Soleil</h1>
+                </div>
+                <h2>Les règles</h2>
+                <input type="checkbox" id="active">
+                <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+                <div class="wrapper">
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <!-- <li><a href="#">Gérer les joueurs</a></li> -->
+                        <li><a href="#">Règles</a></li>
+                        <!-- <li><a href="#">Options</a></li> -->
+                        <li><a href="about-us.html">A propos</a></li>
+                    </ul>
+                </div>
+            </header>
+            <main>
+                <div class="rules">
+                    <button id="rules-prev-btn"><</button>
+                    <div class="rule-1 visible">
+                        <h3>-- 1 --</h3>
+                        <p>Le jeu est composé de plusieurs couches de cartes, représentant les cercles autour du soleil.</p>
+                    </div>
+                    <div class="rule-2">
+                        <h3>-- 2 --</h3>
+                        <p>La première couche vaut <strong>1 gorgée</strong> et consiste à deviner si la carte est rouge ou noire.</p>   
+                    </div>
+                    <div class="rule-3">
+                        <h3>-- 3 --</h3>
+                        <p>La deuxième vaut <strong>2 gorgées</strong> et n'est débloquée que si la carte précédente de la première couche a été dévoilée. Il faut deviner si sa valeur est supérieure ou inférieure à la carte précédente.</p>
+                    </div>
+                    <div class="rule-4">
+                        <h3>-- 4 --</h3>
+                        <p>La troisème vaut <strong>3 gorgées</strong> et n'est débloquée que si les deux cartes voisines sont débloquées. Il faut deviner si sa valeur est comprise ou non entre les valeurs des deux cartes voisines.</p>
+                    </div>
+                    <div class="rule-5">
+                        <h3>-- 5 --</h3>
+                        <p>La quatrième vaut <strong>4 gorgées</strong> et n'est débloquée que si la carte précedente de la troisème couche a été dévoilée. Il faut deviner sa couleur (pique, trèfle, coeur ou carreau).</p>
+                    </div>
+                    <div class="rule-6">
+                        <h3>-- 6 --</h3>
+                        <p>Les deux cartes centrales valent <strong>entre 5 et 10 gorgées</strong> et ne sont débloquées que si six cartes de la quatrième couche ont été dévoilées. Il faut alors deviner si leur valeur est supérieure ou inférieure à 8 <strong>ainsi</strong> que leur couleur (pique, trèfle, coeur ou carreau).</p>
+                    </div>
+                    <div class="rule-7">
+                        <h3>-- 7 --</h3>
+                        <p> Si le joueur a une bonne prédiction sur les deux, il doit boire <strong>5 gorgées</strong> en plus des gorgées présentes dans le pot, s'il en a deux, <strong>10 gorgées</strong> sont ajoutées au pot. S'il se trompe sur les deux, il doit boire <strong>10 gorgées</strong>.</p>
+                    </div>
+                    <div class="rule-8">
+                        <h3>-- 8 --</h3>
+                        <p>A chaque fois qu'une carte est dévoilée, le nombre de gorgées correspondant est ajouté au pot, si le joueur s'est trompé, il doit boire le nombre de gorgées présent dans le pot.</p>
+                    </div>
+                    <div class="rule-9">
+                        <h3>-- 9 --</h3>
+                        <p>Rien que mieux que la pratique, alors maintenant à vous de jouer!</p>
+                    </div>
+                    <button id="rules-next-btn">></button>
+                </div>
+            </main>
+            <footer>
+                <p>💡 D'après une idée de <a href="https://www.instagram.com/timotheegaudin/" target="_blank">@timotheegaudin</a> et <a href="https://www.instagram.com/jeremie_crn/" target="_blank">@jeremie_crn</a></p>
+                <p>Conçu avec ❤️ par <a href="https://github.com/quentingrau/quentingrau" target="_blank">@quentingrau</a></p>
+            </footer>
+        </div>
+        <script src="rules.js"></script>
+    </body>
+</html>
