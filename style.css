@@ -1,16 +1,50 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #FFF;
+* {
+    box-sizing: border-box;
+}
 
-    background-image: url(img/table.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover;
+:root {
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-secondary: 'Source Sans Pro', sans-serif;
+    
+    --fw-reg: 400;
+    --fw-bold: 700;
+    
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent-primary: #FA709A;
+    --clr-accent-secondary: #FEE140;
+    
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+body {
+    font-family: var(--ff-primary);
+    color: var(--clr-light);
+
+    background-color: var(--clr-accent-secondary);
+    background-image: linear-gradient(135deg, var(--clr-accent-secondary) 0%, var(--clr-accent-primary) 100%);
+    background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
 
     margin: 0;
-    width: 100%;
-    min-height: 100vh;
-    height: 100%;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .container {
@@ -21,51 +55,42 @@ body {
 }
 
 header {
-    background-color: tomato;
+    background-color: rgba(254, 225, 64, .5);
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 1em 0 2em;
-    max-height: 30vh;
 }
 
-.title-logo {
+header * {
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+header .title-logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.title-logo img {
-    height: 15em;
+header .title-logo img {
+    height: 7em;
     margin-right: 2em;
 }
 
 header h1 {
-    font-size: 6rem;
+    font-size: 3rem;
 }
 
 header h2 {
     margin: 0;
-    font-size: 4rem;
-}
-
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-    header h1 {
-        font-size: 3rem;
-    }
-    .title-logo img {
-        height: 7em;
-    }
-    header h2 {
-        font-size: 2rem;
-    }
+    font-size: 1.25rem;
 }
 
 footer {
     text-align: center;
-    font-size: 3rem;
+    font-size: 1rem;
 }
 
 a {
@@ -92,11 +117,13 @@ a {
 
 .card {
     background-image: url(img/card_back.jpg);
+    border: solid .1em #fff;
     opacity: 0.6;
     background-size: contain;
     width: 58.8%;
     height: 82.4%;
     border-radius: 2.5px;
+    box-shadow: var(--bs);
 }
 
 .discovered,
@@ -104,56 +131,39 @@ a {
     opacity: 1;
 }
 
-.card1 {
-    transform: rotate(90deg);
-}
+.card1 { transform: rotate(90deg); }
 
-.card1:hover {
-    transform: rotate(90deg) scale(1.2);
-}
+.card1:hover { transform: rotate(90deg) scale(1.2); }
 
-.card2 {
-    transform: rotate(0deg);
-}
+.card2 { transform: rotate(0deg); }
 
-.card2:hover {
-    transform: rotate(0deg) scale(1.2);
-}
+.card2:hover { transform: rotate(0deg) scale(1.2); }
 
-.card3 {
-    transform: rotate(-45deg);
-}
+.card3 { transform: rotate(-45deg); }
 
-.card3:hover {
-    transform: rotate(-45deg) scale(1.2);
-}
+.card3:hover { transform: rotate(-45deg) scale(1.2); }
 
-.card4 {
-    transform: rotate(45deg);
-}
+.card4 { transform: rotate(45deg); }
 
-.card4:hover {
-    transform: rotate(45deg) scale(1.2);
-}
+.card4:hover { transform: rotate(45deg) scale(1.2); }
 
 #background-overlay {
+    background-color: rgba(0,0,0,.35);
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 100%;
-    height: 100%;
     z-index: 2;
 }
 
-.overlay {
+ .overlay {
     display: none;
     position: absolute;
     background-color: rgba(0,0,0,0.85);
     border-radius: 1em;
-    top: 60%;
+    top: 50%;
     left: 50%;
     width: 80%;
     max-width: 600px;
@@ -161,13 +171,13 @@ a {
     z-index: 2;
     text-align: center;
     padding: 1em;
-    font-size: 2rem;
+    font-size: 1.25rem;
 }
 
 .card-focus {
     width: 80%;
     height: 35%;
-    margin: 0 auto;
+    margin: 0 auto 1em;
 }
 
 .card-focus img {
@@ -186,9 +196,15 @@ button,
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 5rem;
+    font-size: 3rem;
     text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
     padding: .15em;
+}
+
+.small label,
+.small button
+ {
+    font-size: 2rem;
 }
 
 #ok-btn,
@@ -198,11 +214,10 @@ button,
 
 #layer5-modal {
     max-width: 600px;
-    top: 60%;
 }
 
-#layer5-modal * {
-    font-size: 3rem;
+#layer5-modal h2 {
+    font-size: 1.75rem;
     margin: .35em 0;
 }
 
@@ -216,11 +231,33 @@ input {
 
 #layer5-modal .buttons input:checked + label {
     border: 5px solid white;
+    border-radius: .4em;
 }
 
-@media only screen and (orientation: landscape) {
+#small-device-warning {
+    display: none;
+}
+
+@media (max-width: 330px) {
+    #background-overlay {
+        display: block;
+        background-color: black;
+    }
+    #small-device-warning {
+        position: absolute;
+        display: block;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: .5em;
+    }
+}
+
+@media (min-width: 650px) {
     header {
-        width: 97%;
+        width: 100%;
         flex-direction: row;
         padding: 1em;
     }
@@ -230,21 +267,33 @@ input {
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 3rem;
         margin-left: 1em;
     }
     header h2 {
         margin: 0 1em 0 0;
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
     footer {
         width: 90%;
         font-size: 1.5rem;
     }
-    #card-grid {  
-        max-width: 80vh;
+    .small label,
+    .small button
+    {
+        font-size: 3rem;
     }
-    #background-overlay {
-        top: 30vh;
+    button,
+    .buttons label {
+        font-size: 4rem;
+    }
+    #layer5-modal h2 {
+        font-size: 2.5rem;
+    }
+    .overlay {
+        font-size: 2.5rem;
+    }
+    #card-grid{
+        max-width: 55vh;
     }
 }

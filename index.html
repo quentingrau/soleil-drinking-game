@@ -4,8 +4,7 @@
         <meta charset="UTF-8">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -13,10 +12,15 @@
         <link rel="mask-icon" href="safari-pinned-tab.svg" color="#fed334">
         <meta name="msapplication-TileColor" content="#ffc40d">
         <meta name="theme-color" content="#fed334">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
         <title>Le Soleil</title>
     </head>
     <body>
         <div id="background-overlay">
+            <div id="small-device-warning">
+                <h1>Sorry, your screen is too small...</h1>
+            </div>
             <div id="layer1-modal" class="overlay">
                 <h2>Rouge ou Noir ?</h2>
                 <div class="buttons">
@@ -40,14 +44,14 @@
                     <img id="layer3-focus1" src="" />
                     <img id="layer3-focus2" src="" />
                 </div>
-                <div class="buttons">
+                <div class="buttons small">
                     <button id="inter-btn">👉👈</button>
                     <button id="exter-btn">👈👉</button>
                 </div>
             </div>
             <div id="layer4-modal" class="overlay">
                 <h2>Pique, Trèfle, Coeur ou Carreau ?</h2>
-                <div class="buttons">
+                <div class="buttons small">
                     <button id="spades-btn">♠️</button>
                     <button id="clubs-btn">♣️</button>
                     <button id="hearts-btn">♥️</button>
@@ -64,7 +68,7 @@
                         <label for="less" id="less-text">👇</label>
                     </div>
                     <h2>Pique, Trèfle, Coeur ou Carreau ?</h2>
-                    <div class="buttons">
+                    <div class="buttons small">
                         <input type="radio" name="colors" id="spades" value="spades" checked>
                         <label for="spades" id="spades-text">♠️</label>
                         <input type="radio" name="colors" id="clubs" value="clubs">
@@ -98,7 +102,6 @@
                 <p>Conçu avec ❤️ par <a href="https://github.com/quentingrau/quentingrau" target="_blank">@quentingrau</a></p>
             </footer>
         </div>
-
         <script src="index.js"></script>
     </body>
 </html>
