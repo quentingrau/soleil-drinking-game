@@ -85,6 +85,10 @@ header h1 {
     font-size: 3rem;
 }
 
+header a {
+    text-decoration: none;
+}
+
 header h2 {
     margin: 0;
     font-size: 1.75rem;
@@ -96,6 +100,11 @@ footer {
     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
     box-shadow: var(--bs);
     width: 100%;
+}
+
+footer p {
+    margin: 1em auto;
+    width: 90%;
 }
 
 a {

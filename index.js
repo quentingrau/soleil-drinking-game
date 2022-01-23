@@ -30,6 +30,10 @@ const okBtn = document.getElementById("ok-btn");
 const layer2Focus = document.getElementById("layer2-focus");
 const layer3Focus1 = document.getElementById("layer3-focus1");
 const layer3Focus2 = document.getElementById("layer3-focus2");
+const selfLink = document.getElementById("self-link");
+selfLink.addEventListener("click", () => {
+    document.getElementById("active").checked = false;
+})
 let cards;
 let cardsArr;
 let clickedCard;

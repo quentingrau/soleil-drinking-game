@@ -1,5 +1,6 @@
 const prevBtn = document.getElementById("rules-prev-btn");
 const nextBtn = document.getElementById("rules-next-btn");
+const selfLink = document.getElementById("self-link");
 let active = 1;
 
 prevBtn.addEventListener("click", () => {
@@ -20,4 +21,8 @@ nextBtn.addEventListener("click", () => {
     document.querySelector(".visible").classList.remove("visible");
     const className = `.rule-${active}`;
     document.querySelector(className).classList.add("visible");
+})
+
+selfLink.addEventListener("click", () => {
+    document.getElementById("active").checked = false;
 })
